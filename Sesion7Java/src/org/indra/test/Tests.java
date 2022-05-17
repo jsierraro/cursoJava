@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.util.*;
 import java.util.stream.Stream;
 
-import org.indra.methods.ContadorPalabras;
+import org.indra.ejTest.ContadorPalabras;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package org.indra.methods;
+package org.indra.ejTest;
 
 import java.util.Dictionary;
 import java.util.*;
