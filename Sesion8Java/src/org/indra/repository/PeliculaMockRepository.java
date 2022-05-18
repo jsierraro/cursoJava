@@ -1,5 +1,6 @@
 package org.indra.repository;
 
+import java.time.LocalDate;
 import java.util.*;
 
 import org.indra.models.Pelicula;
@@ -8,10 +9,17 @@ public class PeliculaMockRepository implements IPeliculaRepository{
 
 	private List<Pelicula> peliculas = new ArrayList<Pelicula>();
 	
+	public PeliculaMockRepository() throws Exception {
+		this.add(new Pelicula("La momia", LocalDate.parse("1999-08-12"),"Sam Reimi",160));
+		this.add(new Pelicula("La momia", LocalDate.parse("1999-08-12"),"Sam Reimi",160));
+		this.add(new Pelicula("Doctor Strange", LocalDate.parse("2022-05-06"),"Sam Reimi",200));
+		this.add(new Pelicula("Avatar", LocalDate.parse("2009-12-20"),"James Cameron",230));
+	}
+	
 	@Override
 	public List<Pelicula> findAll() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return this.peliculas;
 	}
 
 	@Override
@@ -38,8 +46,11 @@ public class PeliculaMockRepository implements IPeliculaRepository{
 
 	@Override
 	public void update(Pelicula objeto) throws Exception {
-		delete(objeto.getId());
-		add(objeto);
+		Pelicula modi = findById(objeto.getId());
+		modi.setNombre(objeto.getNombre());
+		modi.setFecSalida(objeto.getFecSalida());
+		modi.setDirector(objeto.getDirector());
+		modi.setMinDUracion(objeto.getMinDUracion());
 	}
 
 }

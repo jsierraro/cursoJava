@@ -33,7 +33,7 @@ public class Program {
 		p.setDirector("Peter Jackson");
 		p.setFecSalida(LocalDate.parse("2001-12-19"));
 		p.setMinDUracion(280);
-		service.Add(p);
+		service.add(p);
 	}
 
 }
