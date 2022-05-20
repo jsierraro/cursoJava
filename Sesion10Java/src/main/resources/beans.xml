@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+	<util:list id="provMadrid">
+		<value>Madrid</value>
+	</util:list>
+	<util:list id="provExtremadura">
+		<value>Caceres</value>
+		<value>Badajoz</value>
+	</util:list>
+	<util:list id="provAsturias">
+		<value>Madrid</value>
+	</util:list>
+	<util:list id="provGalicia">
+		<value>A Coruña</value>
+		<value>Lugo</value>
+		<value>Ourense</value>
+		<value>Pontevedra</value>
+	</util:list>
+	<util:list id="provCantabria">
+		<value>Cantabria</value>
+	</util:list>
+	<bean id="geografiaService"
+		class="org.indra.services.GeografiaService">
+		<property name="comunidadesAutonomas">
+			<util:list>
+				<value>Madrid</value>
+				<value>Extremadura</value>
+				<value>Asturias</value>
+				<value>Galicia</value>
+				<value>Cantabria</value>
+			</util:list>
+		</property>
+		<property name="provincias">
+			<util:map id="utilmap" map-class="java.util.HashMap">
+				<entry key="Madrid" value-ref="provMadrid" />
+				<entry key="Extremadura" value-ref="provExtremadura" />
+				<entry key="Asturias" value-ref="provAsturias" />
+				<entry key="Galicia" value-ref="provGalicia" />
+				<entry key="Cantabria" value-ref="provCantabria" />
+			</util:map>
+		</property>
+	</bean>
+	<bean id="personaService"
+		class="org.indra.services.PersonaService">
+		<property name="connectionString"
+			value="jdbc:sqlite:personas.db"></property>
+	</bean>
+</beans>
