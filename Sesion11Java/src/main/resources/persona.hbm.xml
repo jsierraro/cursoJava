@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class name="org.indra.model.Persona" table="Persona">
+		<id name="Id">
+			<generator class="increment" />
+		</id>
+		<property name="nombre" column="Nombre" />
+		<property name="apellido" column="Apellido" />
+	</class>
+</hibernate-mapping>
