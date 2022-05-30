@@ -1,6 +1,7 @@
 package org.indra.main;
 
 import org.hibernate.*;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import org.indra.models.*;
 import org.indra.services.*;
@@ -19,8 +20,8 @@ public class Program {
 //		ServiceBase.configureSF(sf);
 
 		// configuracion hibernate con anotaciones
-		SessionFactory sf = new AnnotationConfiguration().configure.addPackage("org.indra.models")
-				.addAnotatedClass(Libro.class).buildSessionFactory();
+		SessionFactory sf = new AnnotationConfiguration().configure().addPackage("org.indra.models")
+				.addAnnotatedClass(Libro.class).buildSessionFactory();
 		ServiceBase.configureSF(sf);
 
 		// configuracion de spring
@@ -31,7 +32,7 @@ public class Program {
 		// inyeccion de dependencias
 
 		Libro pilares = new Libro();
-		pilares.setTitulo("Los pilares de la tierra 3");
+		pilares.setTitulo("Los pilares de la tierra 4");
 		pilares.setEscritor("Ken Follet");
 
 		service.add(pilares);
