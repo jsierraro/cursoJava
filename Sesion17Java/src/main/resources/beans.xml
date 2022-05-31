@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean id="holaMundoService"
+		class="org.indra.services.HolaMundoService" />
+	<bean id="serviceAspectBefore"
+		class="org.indra.aspect.BeforeServiceInvocationAspect" />
+	<bean id="serviceAspectAfter"
+		class="org.indra.aspect.AfterServiceInvocationAspect" />
+	<bean id="serviceAspectException"
+		class="org.indra.aspect.ExceptionServiceInvocationAspect" />
+	<bean id="serviceAspectAround"
+		class="org.indra.aspect.AroundServiceInvocationAspect" />
+	<bean id="serviceProxy"
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="holaMundoService" />
+		<property name="interceptorNames">
+			<list>
+				<!-- <value>serviceAspectAfter</value> -->
+				<!-- <value>serviceAspectBefore</value> -->
+				<!-- <value>serviceAspectAround</value> -->
+				<value>serviceAspectException</value>
+			</list>
+		</property>
+	</bean>
+</beans>
