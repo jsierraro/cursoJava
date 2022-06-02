@@ -1,0 +1,24 @@
+1  javier sierra rodriguez	
+
+2  Es la tecnica mediante la cual se ocultan los atributos de una clase para que no puedan accederse directamente
+
+3  Se implementa utilizando atributos privados, y la forma de modificarlos y observarlos es mediante los metodos getter y setter
+
+4  El polimorfismo es otra tecnica que, utilizando una clase padre, permite englobar un tipo de objetos con metodos comunes (por ejemplo, 
+   clase animales con sus diferentes metodos "sonido")
+
+5  Es un proceso en el que la instanciacion de un objeto se realiza desde otro objeto
+
+6  Un posible uso es, por ejemplo, en un programa principal, cuando queremos instanciar el objeto X en la clase Z, se instancia en la propia clase
+   Z en su constructor, en lugar de instanciarlo antes de la definicion.
+
+7  No recuerdo cuales son los dos tipos, ¿uno podria ser por constructor?
+
+8  SPring es el framework que permite utilizar inyeccion de dependencias
+
+9  La inyeccion de dependencias en spring se hace utilizando los archivos beans.xml, y en una aplicacion maven hay que incluir en el archivo pom
+   los paquetes de spring para poder utilizarlo.
+
+10 De igual forma hay que incluir los paquetes antes de descargarse el proyecto (spring web), y luego hay que utilizar las anotaciones para incluir
+   la inyeccion de dependencias
+
